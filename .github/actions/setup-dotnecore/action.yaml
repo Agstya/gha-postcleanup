@@ -4,7 +4,7 @@ inputs:
   version:
     description: '.NET Core version to install (e.g., 3.1)'
     required: false
-    default: '3.1'
+    default: '3.1.0'
 outputs:
   dotnet-path:
     description: 'Path to .NET executable'
@@ -19,7 +19,7 @@ runs:
       run: |
         wget https://download.visualstudio.microsoft.com/download/pr/76cabfc3-6010-472e-a5b3-bfe854a24c4e/1810de5554f8cd9825b47ae46b9990b4/dotnet-runtime-3.1.0-rhel.6-x64.tar.gz
         mkdir -p ${{ github.workspace }}/dotnet
-        tar zxf [file-name].tar.gz -C $${{ github.workspace }}/dotnet
+        tar zxf dotnet-runtime-${{ inputs.version }}-rhel.6-x64.tar.gz -C $${{ github.workspace }}/dotnet
       env:
         DOTNET_VERSION: ${{ inputs.version }}
     - name: Output .NET Version
