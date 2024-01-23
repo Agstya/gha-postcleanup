@@ -1,0 +1,19 @@
+name: Setup .NET Core Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      dotnetVersion:
+        description: '.NET Core Version'
+        required: true
+        default: '3.1'
+
+jobs:
+  setup-dotnet:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: ./.github/actions/setup-dotnecore
+      with:
+        version: ${{ github.event.inputs.dotnetVersion }}
