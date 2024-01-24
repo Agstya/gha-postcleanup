@@ -47,7 +47,6 @@ function run() {
             // Set the output variable
             core.setOutput('dotnet-path', dotnetPath);
             // Optionally, print out the version of dotnet
-            yield exec.exec(`${dotnetPath}/dotnet`, ['--version']);
         }
         catch (error) {
             core.setFailed(`Action failed with error: ${error}`);
