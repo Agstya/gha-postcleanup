@@ -16,6 +16,8 @@ runs:
     
     - name: Download .NET Core
       shell: bash
+      env:
+        DOTNET_VERSION: ${{ inputs.version }}
       run: |
         wget https://download.visualstudio.microsoft.com/download/pr/76cabfc3-6010-472e-a5b3-bfe854a24c4e/1810de5554f8cd9825b47ae46b9990b4/dotnet-runtime-3.1.0-rhel.6-x64.tar.gz
         mkdir -p ${{ github.workspace }}/dotnet
@@ -24,7 +26,16 @@ runs:
         ls
         cd dotnet 
         ls
-        
-      env:
-        DOTNET_VERSION: ${{ inputs.version }}
+    - name: List files
+      shell: bash
+      run: |
+        pwd
+        ls
+
+    - name: Change dir
+      shell: bash
+      run: |
+        cd dotnet 
+        ls
+
 
