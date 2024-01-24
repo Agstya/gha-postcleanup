@@ -1,8 +1,8 @@
 # Dependency directories
-node_modules/
+# node_modules/
 
 # Distribution / build
-dist/
+# cdist/
 
 # Environment configuration
 .env
