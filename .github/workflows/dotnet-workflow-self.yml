@@ -1,4 +1,4 @@
-name: Setup .NET Core Workflow
+name: Setup .NET Core Workflow (Self Hosted)
 
 on:
   workflow_dispatch:
