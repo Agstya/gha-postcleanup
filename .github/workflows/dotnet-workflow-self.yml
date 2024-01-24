@@ -17,6 +17,11 @@ jobs:
       uses: ./.github/actions/setup-dotnecore
       with:
         version: ${{ github.event.inputs.dotnetVersion }}
+        
+    - name: Set Env Variable
+      shell: bash
+      run: ACTIONS_RUNNER_HOOK_JOB_STARTED=/opt/runner/cleanup_script.sh
+      
     - name: Print current user
       run: whoami
 
