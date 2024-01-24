@@ -13,8 +13,9 @@ async function deleteFolder(folderPath) {
   }
   await fs.rmdir(folderPath);
 }
+
 const downloadFolderPath = path.join(process.env['GITHUB_WORKSPACE'], 'dotnet');
-deleteFolder(process.env['downloadFolderPath']).catch(err => {
+deleteFolder(downloadFolderPath).catch(err => {
   console.error(err);
   process.exit(1);
 });
