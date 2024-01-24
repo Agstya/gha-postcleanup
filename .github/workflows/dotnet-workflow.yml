@@ -17,3 +17,16 @@ jobs:
       uses: ./.github/actions/setup-dotnecore
       with:
         version: ${{ github.event.inputs.dotnetVersion }}
+    - name: Print current user
+      run: whoami
+  
+    - name: List files in the current directory
+      run: ls -alrt
+  
+    - name: Echo a text
+      run: echo "Hello from workflow"
+
+
+
+
+
