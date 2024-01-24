@@ -30,5 +30,15 @@ jobs:
       run: echo "Hello from workflow"
 
 
+    - name: List files
+      shell: bash
+      run: |
+        pwd
+        ls
 
+    - name: Change dir
+      shell: bash
+      run: |
+        cd dotnet 
+        ls
 
