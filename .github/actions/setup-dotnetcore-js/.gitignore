@@ -1,0 +1,24 @@
+# Dependency directories
+node_modules/
+
+# Distribution / build
+dist/
+
+# Environment configuration
+.env
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Operating System generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp

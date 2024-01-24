@@ -1,0 +1,13 @@
+name: 'Setup .NET Core Action'
+description: 'Downloads and sets up a specific version of .NET Core'
+inputs:
+  version:
+    description: '.NET Core version to install (e.g., 3.1)'
+    required: false
+    default: '3.1.0'
+outputs:
+  dotnet-path:
+    description: 'Path to .NET executable'
+runs:
+  using: 'node12'
+  main: 'index.js'
