@@ -39,7 +39,7 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const version = core.getInput('version', { required: true }) || '3.1.0';
-            const dotnetPath = `${process.env['RUNNER_TEMP']}/dotnet`;
+            const dotnetPath = `${process.env['GITHUB_WORKSPACE']}/dotnet`;
             yield io.mkdirP(dotnetPath); // Ensure the directory exists
             const downloadUrl = `https://download.visualstudio.microsoft.com/download/pr/76cabfc3-6010-472e-a5b3-bfe854a24c4e/1810de5554f8cd9825b47ae46b9990b4/dotnet-runtime-${version}-rhel.6-x64.tar.gz`;
             yield exec.exec('wget', [downloadUrl]);
