@@ -1,4 +1,4 @@
-name: Setup .NET Core Workflow JS
+name: Setup .NET Core Workflow w/ TypeScrpit Action
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
         default: 3.1.0
 
 jobs:
-  setup-dotnet:
+  setup-dotnet-job:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -17,16 +17,21 @@ jobs:
       uses: ./.github/actions/setup-dotnetcore-js
       with:
         version: ${{ github.event.inputs.dotnetVersion }}
-    - name: Print current user
-      run: whoami
-      
-  setup-dotnet-2:
-    runs-on: ubuntu-latest
-    steps:
-    - name: List files in the current directory
+    - name: Step-3
       run: ls -alrt
   
-    - name: Echo a text
+    - name: Step-4
+      run: echo "Hello from workflow"
+    - name: Step-5
+      run: whoami
+      
+  second-parallel-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Step-1
+      run: ls -alrt
+  
+    - name: Step-2
       run: echo "Hello from workflow"
 
 
