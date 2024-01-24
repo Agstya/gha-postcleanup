@@ -28,4 +28,4 @@ deleteFolder(dotnetPath).catch(err => {
 
 console.log(`Successfully deleted: ${dotnetPath}`);
 
-console.log('Finished Cleanup Process...');
+
