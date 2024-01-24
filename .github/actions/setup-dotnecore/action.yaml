@@ -27,6 +27,4 @@ runs:
         
       env:
         DOTNET_VERSION: ${{ inputs.version }}
-    - name: Output .NET Version
-      shell: bash
-      run: ${{ github.workspace }}/dotnet --version
+
