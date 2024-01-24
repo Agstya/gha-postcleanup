@@ -23,16 +23,6 @@ runs:
         mkdir -p ${{ github.workspace }}/dotnet
         tar zxf dotnet-runtime-${{ inputs.version }}-rhel.6-x64.tar.gz -C ${{ github.workspace }}/dotnet
 
-    - name: List files
-      shell: bash
-      run: |
-        pwd
-        ls
 
-    - name: Change dir
-      shell: bash
-      run: |
-        cd dotnet 
-        ls
 
 
