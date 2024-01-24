@@ -19,16 +19,6 @@ jobs:
         version: ${{ github.event.inputs.dotnetVersion }}
     - name: Print current user
       run: whoami
-      
-  setup-dotnet-2:
-    runs-on: ubuntu-latest
-    steps:
-    - name: List files in the current directory
-      run: ls -alrt
-  
-    - name: Echo a text
-      run: echo "Hello from workflow"
-
 
     - name: List files
       shell: bash
@@ -41,4 +31,16 @@ jobs:
       run: |
         cd dotnet 
         ls
+        
+  parallel-job-2:
+    runs-on: ubuntu-latest
+    steps:
+    - name: List files in the current directory
+      run: ls -alrt
+  
+    - name: Echo a text
+      run: echo "Hello from workflow"
+
+
+
 
