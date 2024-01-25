@@ -36,7 +36,7 @@ jobs:
     - name: echo Workspace
       shell: bash
       run: |
-        echo "GITHUB_WORKSPACE={{GITHUB_WORKSPACE}}"
+        echo "GITHUB_WORKSPACE=${GITHUB_WORKSPACE}"
         
     - name: echo Cleanup Script
       shell: bash
