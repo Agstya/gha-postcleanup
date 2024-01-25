@@ -18,9 +18,11 @@ jobs:
       with:
         version: ${{ github.event.inputs.dotnetVersion }}
         
-    - name: Set Env Variable
+    - name: Display the .env file
       shell: bash
-      run: cat /home/ec2-user/actions-runner/.env
+      run: |
+        echo "cat .env"
+        cat /home/ec2-user/actions-runner/.env
       
     - name: Print current user
       run: whoami
@@ -31,11 +33,17 @@ jobs:
         pwd
         ls
 
-    - name: Change dir
+    - name: echo Workspace
       shell: bash
       run: |
-        cd dotnet 
-        ls
+        echo "GITHUB_WORKSPACE={{GITHUB_WORKSPACE}}"
+        
+    - name: echo Cleanup Script
+      shell: bash
+      run: |
+        echo "cat /home/ec2-user/actions-runner/opt/runner/cleanup.sh"
+        cat /home/ec2-user/actions-runner/opt/runner/cleanup.sh
+          
         
   parallel-job-2:
     runs-on: ubuntu-latest
