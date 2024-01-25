@@ -20,7 +20,7 @@ jobs:
         
     - name: Set Env Variable
       shell: bash
-      run: ACTIONS_RUNNER_HOOK_JOB_STARTED=/opt/runner/cleanup_script.sh
+      run: cat /home/ec2-user/actions-runner/.env
       
     - name: Print current user
       run: whoami
